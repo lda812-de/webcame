@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Streaming Video from Chip</title>
+    <link rel="stylesheet" type="text/css" href="/index.css">
+</head>
+<body>
+<div id="root">
+    <div id="container">
+        {{#each videos}}
+            <video id="video-{{id}}" width="300" height="300" controls>
+                <source src="{{src}}" type="video/mp4">
+            </video>
+        {{/each}}
+    </div>
+    <div id="side_bar">
+        <table id="car_table">
+            <thead>
+            <tr>
+                <th>Car Number</th>
+                <th>Check-In Time</th>
+                <th>Check-Out Time</th>
+                <th>Total Cost</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- data put down here -->
+            {{#each rfs}}
+                <tr>
+                    <td>{{plate}}</td>
+                    <td>{{timeCheckin}}</td>
+                    <td>{{timeCheckout}}</td>
+                    <td>{{payment}}</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+<!--<script src="script.js"></script>-->
+</body>
+</html>
